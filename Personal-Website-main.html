@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interactive Resume - for now</title>
+	<meta charset = "utf-8">
+</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+* {
+	box-sizing: border-box;
+}
+
+h2 {
+	font-family: Lobster;
+	font-size: 40px;
+}
+
+.fa {
+	padding: 20px;
+	font-size: 30px;
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+	background-color: #65350f;
+	color: #fffbee;
+	margin: 5px 2px;
+}
+
+.fa:hover {
+	opacity: 0.7;
+}
+
+.navbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #fffbee;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	border: #231709 solid 3px;
+}
+
+.navbar > li a {
+	float: right;
+	display: block;
+	color: #231709;
+	text-align: center;
+	padding: 25px 5%;
+	text-decoration: none;
+	font-size: 15px;
+	font-family: Oswald;
+}
+
+.navbar > li a:hover {
+	background-color: #dfdbce;
+}
+
+body {
+	background-color: #231709;
+	text-align: center;
+	margin: 0;
+}
+
+.name {
+	background: url("https://i.imgur.com/EHsUyMd.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 10em 1em;
+	margin: 0;
+	font-family: "Lobster";
+}
+
+.name > * {
+	color: #f5f5f5;
+}
+
+.name > h1 {
+	font-size: 300%;
+	font-size: 6vw;
+	padding-bottom: 0;
+}
+
+.name > h5 {
+	font-size: 100%;
+	font-size: 2.5vw;
+}
+
+.transition1 {
+	background: url("https://i.imgur.com/iWr0hUg.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 50%;
+	margin: 0;
+}
+
+.transition2 {
+	background: url("https://i.imgur.com/kYTIAyZ.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 50%;
+	margin: 0;
+}
+
+.skills {
+	color: #fffbee;
+	vertical-align: middle;
+	text-align: left;
+	padding: 20px;
+	max-width: 200px;
+}
+
+.skills > h2 {
+	font-size: 40px;
+	padding: 0;
+}
+
+.skills > ul {
+	font-size: 20px;
+	font-family: Oswald
+}
+
+.portrait {
+	vertical-align: middle;
+	text-align: right;
+	padding: 0 40px 0 0;
+	max-width: 70px;
+}
+
+.skillslide {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.skilldiv {
+	background-color: #231709;
+	padding: 10% 0;
+}
+
+.exp {
+	color: #fffbee;
+	margin: 0;
+	padding: 10% 0;
+	background-color: #371d10;
+}
+
+.exp > h2 {
+	font-size: 40px;
+	padding: 0;
+}
+
+.exptable {
+	padding: 5%;
+	width: 100%;
+}
+
+.tarflip {
+	float: left;
+	background-color: transparent;
+	width: 500px;
+	height: 500px;
+	perspective: 1000px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.tarflipinner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.tarflip:hover .tarflipinner {
+	transform: rotateY(180deg);
+}
+
+.tarflipfront, .tarflipback {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tarflipfront {
+	background-color: #fffbee;
+	color: #c00;
+}
+
+.tarflipback {
+	text-align: left;
+	background-color: #fffbee;
+	color: #c00;
+	transform: rotateY(180deg);
+	padding: 5%;
+	font-family: Lobster;
+	font-size: 150%;
+}
+
+.bsaflip {
+	float: right;
+	background-color: transparent;
+	width: 500px;
+	height: 500px;
+	perspective: 1000px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.bsaflipinner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.bsaflip:hover .bsaflipinner {
+	transform: rotateY(180deg);
+}
+
+.bsaflipfront, .bsaflipback {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.bsaflipfront {
+	background-color: #fffbee;
+	color: #c00;
+}
+
+.bsaflipback {
+	text-align: left;
+	background-color: #fffbee;
+	color: #c00;
+	padding: 5%;
+	transform: rotateY(180deg);
+	font-family: Lobster;
+	font-size: 150%;
+}
+
+.ed {
+	color: #fffbee;
+	vertical-align: middle;
+	text-align: right;
+	padding: 20px;
+	max-width: 175px;
+	direction: rtl;
+}
+
+.ed > h2 {
+	font-size: 40px;
+	padding: 0;
+}
+
+.ed > ul {
+	font-size: 20px;
+	font-family: Oswald;
+}
+
+.edpic {
+	vertical-align: middle;
+	text-align: right;
+	padding: 0 0 0 40px;
+	max-width: 100px;
+}
+
+.edtable {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.eddiv {
+	background-color: #231709;
+	padding: 10% 0;
+}
+
+footer {
+	padding: 80px;
+	background-color: #fffbee;
+	text-align: center;
+}
+
+</style>
+
+<body>
+
+<div class = "name">
+
+	<h1>Zachariah Derrick
+	<br>...
+	</h1>
+	
+	<h5>Flagstaff, AZ 86001
+	<br>(623) 312-4455 &emsp; zcd22@nau.edu</h5>
+
+</div>
+
+<ul class = "navbar">
+	<li><a href = "Projects.html">Projects</a></li>
+	<li><a href = "#">nothing</a></li>
+	<li><a href = "#">nothing</a></li>
+</ul>
+
+<div class = "skilldiv">
+<table class = "skillslide">
+	<tc>
+		
+		<td class = "skills">
+			<h2>Skills</h2>
+			
+			<ul>
+				<li>Familiarity with many tools and languages, including:
+					<ul>
+						<li>Python</li>
+						<li>C#</li>
+						<li>Unity</li>
+						<li>Processing JavaScript.</li>
+						<li>HTML and CSS</li>
+					</ul>
+				</li>
+				<li>Hardworking, adaptable, punctual, mission oriented, inclusive, and friendly.</li>
+				<li>Experienced in customer service and communicating with a team to properly execute tasks.</li>
+				<li>Striving to learn and work with new concepts and tools.</li>
+			</ul>
+
+		</td>
+	
+		<td class = "portrait">
+			<p><img src = "https://i.imgur.com/e4FVkPM.png" width = "100%" height = "100%"></p>
+		</td>
+		
+	</tc>
+	
+</table>
+</div>
+
+<div class = "transition1"> </div>
+
+<div class = "exp">
+	<h2>Experience</h2>
+	
+	<table class = "exptable">
+		<tc>
+		
+			<td class = "tarflip">
+				<div class = "tarflipinner">
+					<div class = "tarflipfront">
+						<img src = "https://i.imgur.com/ytGbTmu.png" width = "100%" height = "100%">
+					</div>
+					<div class = "tarflipback">
+						<h4>Food and Beverage Expert, Customer Service, Online Delivery</h4>
+						<h5>July 2019 - Present</h5>
+						<ul>
+							<li>Quickly responding to time-sensitive situations.</li>
+							<li>Training and experience in multiple different positions around the store expanded my adaptability and desire to learn.</li>
+							<li>Trusted representative of the company, satisfying guests and culminating a positive atmosphere.</li>
+						</ul>
+					</div>
+				</div>
+			</td>
+			
+			<td class = "bsaflip">
+				<div class = "bsaflipinner">
+					<div class = "bsaflipfront">
+						<img src = "https://i.imgur.com/HMElpbb.jpg" width = "100%" height = "100%">
+					</div>
+					<div class = "bsaflipback">
+						<h4>Boy Scouts of America - Eagle Scout</h4>
+						<h5>December 2011 - December 2019</h5>
+						<ul>
+							<li>Serving other members of my community and bettering my environment for the benefit of future generations.</li>
+							<li>Organizing, leading, and completing an Eagle project.</li>
+							<li>Leading other volunteers in many service projects, and teaching others about the importance of community service.</li>
+						</ul>
+					</div>
+				</div>
+			</td>
+			
+		</tc>
+	</table>
+	
+</div>
+
+<div class = "transition2"> </div>
+
+<div class = "eddiv">
+<table class = "edtable">
+	<tc>
+		
+		<td class = "edpic">
+			<p><img src = "https://i.imgur.com/XJEerPx.jpg" width = "100%" height = "100%"></p>
+		</td>
+		
+		<td class = "ed">
+			<h2>Education</h2>
+			
+			<ul>
+				<li>Northern Arizona University, Flagstaff AZ</li>
+				<li>Computer Science - Bachelor of Science</li>
+				<li>August 2020 - (Anticipated)May 2024</li>
+				<li>Coursework completed in relevant Computer Science, Mathematics, Science, and English classes</li>
+			</ul>
+		</td>
+	
+	</tc>
+</table>
+</div>
+
+<footer>
+	<a href = "https://www.linkedin.com/in/zachariah-derrick-00125b1b8/" class = "fa fa-linkedin"></a>
+	<a href = "https://github.com/ZaderRox1111" class = "fa fa-github"></a>
+</footer>
+
+</body>
+</html>
