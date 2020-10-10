@@ -21,6 +21,11 @@ h2 {
 	font-size: 40px;
 }
 
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
 .fa {
 	padding: 20px;
 	font-size: 30px;
@@ -106,6 +111,7 @@ body {
 	background-size: cover;
 	padding: 50%;
 	margin: 0;
+	clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
 }
 
 .transition2 {
@@ -116,9 +122,21 @@ body {
 	background-size: cover;
 	padding: 50%;
 	margin: 0;
+	clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
 }
 
-.skills {
+.transition3 {
+	background: url("https://i.imgur.com/9U5hu8Z.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 50%;
+	margin: 0;
+	clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+}
+
+.about {
 	color: #fffbee;
 	vertical-align: middle;
 	text-align: left;
@@ -126,12 +144,12 @@ body {
 	max-width: 200px;
 }
 
-.skills > h2 {
+.about > h2 {
 	font-size: 40px;
 	padding: 0;
 }
 
-.skills > ul {
+.about > ul {
 	font-size: 20px;
 	font-family: Oswald
 }
@@ -143,123 +161,9 @@ body {
 	max-width: 70px;
 }
 
-.skillslide {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-.skilldiv {
+#aboutdiv {
 	background-color: #231709;
 	padding: 10% 0;
-}
-
-.exp {
-	color: #fffbee;
-	margin: 0;
-	padding: 10% 0;
-	background-color: #371d10;
-}
-
-.exp > h2 {
-	font-size: 40px;
-	padding: 0;
-}
-
-.exptable {
-	padding: 5%;
-	width: 100%;
-}
-
-.tarflip {
-	float: left;
-	background-color: transparent;
-	width: 500px;
-	height: 500px;
-	perspective: 1000px;
-	vertical-align: middle;
-	text-align: center;
-}
-
-.tarflipinner {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition: transform 0.8s;
-	transform-style: preserve-3d;
-}
-
-.tarflip:hover .tarflipinner {
-	transform: rotateY(180deg);
-}
-
-.tarflipfront, .tarflipback {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-.tarflipfront {
-	background-color: #fffbee;
-	color: #c00;
-}
-
-.tarflipback {
-	text-align: left;
-	background-color: #fffbee;
-	color: #c00;
-	transform: rotateY(180deg);
-	padding: 5%;
-	font-family: Lobster;
-	font-size: 150%;
-}
-
-.bsaflip {
-	float: right;
-	background-color: transparent;
-	width: 500px;
-	height: 500px;
-	perspective: 1000px;
-	vertical-align: middle;
-	text-align: center;
-}
-
-.bsaflipinner {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition: transform 0.8s;
-	transform-style: preserve-3d;
-}
-
-.bsaflip:hover .bsaflipinner {
-	transform: rotateY(180deg);
-}
-
-.bsaflipfront, .bsaflipback {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-.bsaflipfront {
-	background-color: #fffbee;
-	color: #c00;
-}
-
-.bsaflipback {
-	text-align: left;
-	background-color: #fffbee;
-	color: #c00;
-	padding: 5%;
-	transform: rotateY(180deg);
-	font-family: Lobster;
-	font-size: 150%;
 }
 
 .ed {
@@ -285,17 +189,168 @@ body {
 	vertical-align: middle;
 	text-align: right;
 	padding: 0 0 0 40px;
-	max-width: 100px;
-}
-
-.edtable {
-	border-collapse: collapse;
-	width: 100%;
+	max-width: 200px;
 }
 
 .eddiv {
 	background-color: #231709;
 	padding: 10% 0;
+}
+
+.dropbtn{
+	background-color: #fffbee;
+	color: #231709;
+	padding: 16px;
+	font-family: Lobster, Oswald;
+	font-size: 17.5px;
+	border: none;
+	cursor: pointer;
+	margin: 10px;
+	border-radius: 5%;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content > ul {
+	padding: 0;
+	text-align: left;
+	min-width: 30em;
+	direction: ltr;
+	font-size: 17.5px;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #fffbee;
+	color: #231709;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+	padding: 12px 40px;
+	z-index: 15;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	opacity: 0.7;
+}
+
+.prj1div {
+	padding: 10% 0;
+	width: 100%;
+	background-color: #231709;
+}
+
+.prj1 {
+	max-width: 250px;
+}
+
+.prj1 > ul {
+	font-size: 20px;
+	font-family: Oswald;
+	color: #fffbee;
+	text-align: left;
+}
+
+.prj1 > h2 {
+	margin: 0;
+	padding: 0;
+	color: #fffbee;
+	font-size: 40px;
+}
+
+.prj1 > h3 {
+	font-family: Lobster;
+	color: #fffbee;
+	font-size: 30px;
+	margin: 15px;
+}
+
+.prj2div {
+	padding: 10% 0;
+	width: 100%;
+	background-color: #3a1e08;
+	clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+}
+
+.prj2 {
+	max-width: 125px;
+}
+
+.prj2int {
+	vertical-align: middle;
+	text-align: left;
+	padding: 0 40px;
+	max-width: 150px;
+}
+
+.prj2 > ul {
+	font-size: 20px;
+	font-family: Oswald;
+	color: #fffbee;
+	text-align: right;
+	direction: rtl;
+}
+
+.prj2 > h2 {
+	margin: 0;
+	padding: 0;
+	color: #fffbee;
+	font-size: 40px;
+}
+
+.prj2 > h3 {
+	font-family: Lobster;
+	color: #fffbee;
+	font-size: 30px;
+	margin: 15px;
+}
+
+.prj3div {
+	padding: 10% 0;
+	width: 100%;
+	background-color: #231709;
+}
+
+.prj3 {
+	max-width: 150px;
+}
+
+.prj3 > ul {
+	font-size: 20px;
+	font-family: Oswald;
+	color: #fffbee;
+	text-align: left;
+}
+
+.prj3 > h2 {
+	margin: 0;
+	padding: 0;
+	color: #fffbee;
+	font-size: 40px;
+}
+
+.prj3 > h3 {
+	font-family: Lobster;
+	color: #fffbee;
+	font-size: 30px;
+	margin: 15px;
+}
+
+.prj3int {
+	vertical-align: middle;
+	text-align: right;
+	padding: 0 40px;
+	max-width: 150px;
+}
+
+iframe {
+	padding: 0 20px;
 }
 
 footer {
@@ -320,31 +375,30 @@ footer {
 </div>
 
 <ul class = "navbar">
-	<li><a href = "Projects.html">Projects</a></li>
 	<li><a href = "#">nothing</a></li>
-	<li><a href = "#">nothing</a></li>
+	<li><a href = "#projects">Projects</a></li>
+	<li><a href = "#aboutdiv">About Me!</a></li>
 </ul>
 
-<div class = "skilldiv">
-<table class = "skillslide">
+<div id = "aboutdiv">
+<table class = "abouttable">
 	<tc>
 		
-		<td class = "skills">
-			<h2>Skills</h2>
+		<td class = "about">
+			<h2>About Me!</h2>
 			
 			<ul>
-				<li>Familiarity with many tools and languages, including:
+				<li>I love working on things I am passionate about, and sometimes it is hard to pull me away from projects I feel invested in.</li>
+				<li>I am currently a full-time student at Northern Arizona University, and it is the best!</li>
+				<li>I work mainly with Python, however I am comfortable with other tools and languages, like:
 					<ul>
-						<li>Python</li>
 						<li>C#</li>
+						<li>HTML/CSS (Cue Website!)</li>
 						<li>Unity</li>
-						<li>Processing JavaScript.</li>
-						<li>HTML and CSS</li>
+						<li>Processing JS</li>
 					</ul>
 				</li>
-				<li>Hardworking, adaptable, punctual, mission oriented, inclusive, and friendly.</li>
-				<li>Experienced in customer service and communicating with a team to properly execute tasks.</li>
-				<li>Striving to learn and work with new concepts and tools.</li>
+				<li>I am always looking for the next challenge, and the next fun and meaningful project to devote myself to!</li>
 			</ul>
 
 		</td>
@@ -360,57 +414,10 @@ footer {
 
 <div class = "transition1"> </div>
 
-<div class = "exp">
-	<h2>Experience</h2>
-	
-	<table class = "exptable">
-		<tc>
-		
-			<td class = "tarflip">
-				<div class = "tarflipinner">
-					<div class = "tarflipfront">
-						<img src = "https://i.imgur.com/ytGbTmu.png" width = "100%" height = "100%">
-					</div>
-					<div class = "tarflipback">
-						<h4>Food and Beverage Expert, Customer Service, Online Delivery</h4>
-						<h5>July 2019 - Present</h5>
-						<ul>
-							<li>Quickly responding to time-sensitive situations.</li>
-							<li>Training and experience in multiple different positions around the store expanded my adaptability and desire to learn.</li>
-							<li>Trusted representative of the company, satisfying guests and culminating a positive atmosphere.</li>
-						</ul>
-					</div>
-				</div>
-			</td>
-			
-			<td class = "bsaflip">
-				<div class = "bsaflipinner">
-					<div class = "bsaflipfront">
-						<img src = "https://i.imgur.com/HMElpbb.jpg" width = "100%" height = "100%">
-					</div>
-					<div class = "bsaflipback">
-						<h4>Boy Scouts of America - Eagle Scout</h4>
-						<h5>December 2011 - December 2019</h5>
-						<ul>
-							<li>Serving other members of my community and bettering my environment for the benefit of future generations.</li>
-							<li>Organizing, leading, and completing an Eagle project.</li>
-							<li>Leading other volunteers in many service projects, and teaching others about the importance of community service.</li>
-						</ul>
-					</div>
-				</div>
-			</td>
-			
-		</tc>
-	</table>
-	
-</div>
-
-<div class = "transition2"> </div>
-
 <div class = "eddiv">
-<table class = "edtable">
+<table>
 	<tc>
-		
+	
 		<td class = "edpic">
 			<p><img src = "https://i.imgur.com/XJEerPx.jpg" width = "100%" height = "100%"></p>
 		</td>
@@ -420,20 +427,109 @@ footer {
 			
 			<ul>
 				<li>Northern Arizona University, Flagstaff AZ</li>
-				<li>Computer Science - Bachelor of Science</li>
-				<li>August 2020 - (Anticipated)May 2024</li>
-				<li>Coursework completed in relevant Computer Science, Mathematics, Science, and English classes</li>
+				<li>I have a major in Computer Science</li>
+				<li>I started in fall of 2020, and expect to graduate in the spring of 2024</li>
+				<li>I have taken some very interesting classes so far, and I am only a Freshman</li>
+				<div class = "dropdown" style = "float: right;">
+					<button class = "dropbtn">My relevant classes</button>
+					<div class = "dropdown-content">
+						<ul>
+							<li>CS 105 - Teaching me how to work in a Linux system amongst other things</li>
+							<li>CS 126 - Going over the basics of Python and providing challenging projects</li>
+							<li>MAT 238 - Teaching Calculus 3 - useful for machine learning</li>
+							<li>English Classes - Definitely useful for refining communication skills</li>
+						</ul>
+					</div>
+				</div>			
 			</ul>
 		</td>
-	
+		
 	</tc>
 </table>
 </div>
+
+<div class = "transition2"> </div>
+
+<div id = "projects"></div>
+
+<div class = "prj1div">
+<table>
+	<tc>
+		<td class = "prj1">
+			<h2>Project 1<br>...</h2>
+			<h3>Playfair Cipher</h3>
+			<ul>
+				<li>This program was my favorite program I've done in class, so far.</li>
+				<li>Essentially, it takes a message (either encrypted or plain-text), and uses a key you make/know to encrypt/decrypt the message. </li>
+				<li>Super fun, and super challenging!</li>
+			</ul>
+		</td>
+		
+		<td class = "prj1code">
+			<iframe src="https://trinket.io/embed/python3/9091e165b6?runOption=run" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+		</td>
+		
+		
+	</tc>
+</table>
+</div>
+
+<div class = "lltt"></div>
+
+<div class = "prj2div">
+<table>
+	<tc>
+		
+		<td class = "prj2int">
+			<p><img src = "https://i.imgur.com/AmXekWQ.jpg" width = "100%" height = "100%"></p>
+		</td>
+		
+		<td class = "prj2">
+			<h2>Project 2<br>...</h2>
+			<h3>Eagle Project</h3>
+			<ul>
+				<li>Led, organized, and completed a project that repainted an amphitheater and helped build a large water feature in a state park</li>
+				<li>This Eagle Project was done with the help of many volunteers, and with the cooperation of the park</li>
+				<li>This project took many, many hours to plan and get into motion, and was challenging to complete, however it was absolutely worth it</li>
+			</ul>
+		</td>
+		
+	</tc>
+</table>
+</div>
+
+<div class = "ldtt"></div>
+
+<div class = "prj3div">
+<table>
+	<tc>
+		<td class = "prj3">
+			<h2>Project 3<br>...</h2>
+			<h3>This Website!</h3>
+			<ul>
+				<li>This website is constantly being worked on and updated.</li>
+				<li>While this website is very cool, it was very challenging to get working (since it has been a hot minute since I've used HTML/CSS)</li>
+				<li>I've still got it ;)</li>
+			</ul>
+		</td>
+		
+		<td class = "prj3int">
+			<p><img src = "https://i.imgur.com/wn75HE1.jpg" width = "100%" height = "100%"></p>
+		</td>
+		
+		
+	</tc>
+</table>
+</div>
+
+<div class = "transition3"> </div>
 
 <footer>
 	<a href = "https://www.linkedin.com/in/zachariah-derrick-00125b1b8/" class = "fa fa-linkedin"></a>
 	<a href = "https://github.com/ZaderRox1111" class = "fa fa-github"></a>
 </footer>
+
+
 
 </body>
 </html>
